@@ -11,7 +11,6 @@ def contains_char(yellow_guess: str, character: str) -> bool:
             yellow = True
         yellow_i = yellow_i + 1
     return yellow
-print(contains_char("abc","a"))
 
 def emojified(guess: str, SECRET: str) -> str:
     """Turns two stings into a string of wordle emojis."""
@@ -30,5 +29,7 @@ def emojified(guess: str, SECRET: str) -> str:
                 boxes += YELLOW_BOX
             else:
                 boxes += WHITE_BOX
-emojified("hello","olleh")
+        emoji_i += 1
+    return(boxes)
+print(emojified("hello","olleh"))
 
