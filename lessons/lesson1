@@ -1,4 +1,0 @@
-"""Demondtrates asking the user for input"""
-
-print(input("Whats your name?"))
-

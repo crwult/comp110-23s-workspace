@@ -1,8 +1,11 @@
 """Remaking list utils."""
 __author__ = "730552290"
 
+
 def all(checked_list: list[int], match: int) -> bool:
-    """Checks list to see if it's all the same number"""
+    """Checks list to see if it's all the same number."""
+    if len(checked_list) == 0:
+        return False
     idx: int = 0
     while idx < len(checked_list):
         if checked_list[idx] != match:
@@ -10,11 +13,12 @@ def all(checked_list: list[int], match: int) -> bool:
         idx += 1
     return True
 
+
 def max(max_list: list[int]) -> int:
-    """When given a list, returns the maximum value in the list"""
+    """When given a list, returns the maximum value in the list."""
     if len(max_list) == 0:
         raise ValueError("max() arg is an empty List")
-    else :
+    else:
         max_idx = 1
         filler = max_list[0]
         while max_idx < len(max_list):
@@ -22,6 +26,7 @@ def max(max_list: list[int]) -> int:
                 filler = max_list[max_idx]
             max_idx += 1
         return filler
+
 
 def is_equal(list_1: list[int], list_2: list[int]) -> bool:
     """Checks if two lists are deeply equivalent."""

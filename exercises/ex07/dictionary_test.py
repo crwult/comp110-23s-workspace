@@ -1,8 +1,10 @@
 """Testing dictionary functions."""
 __author__ = "730552290"
 
+
 from exercises.ex07.dictionary import count, invert, favorite_color
 import pytest
+
 
 def test_invert_icecream() -> None:
     """Use Case: Inverts dictionary with people and their favorite icecream."""
@@ -44,23 +46,21 @@ def test_fav_col_equal() -> None:
 
 
 def test_count_movies() -> None:
-    """Use Case: counts dictionary with people and their favorite movies."""
-    normal_dict: dict[str, str] = {"me": "Miracle", "Bennett": "Get Out", "Sergiy": "Barbie Maraposa"}
+    """Use Case: counts movies in a list."""
+    normal_dict: list[str] = {"Miracle", "Get Out", "Barbie Maraposa"}
     count_dict: dict[str, int] = {"Miracle": 1, "Get Out": 1, "Barbie Maraposa": 1}
     assert count(normal_dict) == count_dict
 
+
 def test_count_shows() -> None:
-    """Use Case: counts dictionary with people and their favorite shows."""
-    normal_dict: dict[str, str] = {"me": "Community", "Bennett": "Riverdale", "Sergiy": "Riverdale"}
-    count_dict: dict[str, int] = {"Community": 1, "Riverdale": 2}
+    """Use Case: counts shows in a list."""
+    normal_dict: list[str] = ["Community", "Community", "You", "Riverdale"]
+    count_dict: dict[str, int] = {"Community": 2, "Riverdale": 1, "You": 1}
     assert count(normal_dict) == count_dict
 
 
 def test_count_empty() -> None:
-    """Edge Case: Sees if counting an empty dictionary results in an empty dictionary."""
+    """Edge Case: Sees if counting an empty list results in an empty dictionary."""
     normal_dict: dict[str, str] = {}
     count_dict: dict[str, int] = {}
     assert count(normal_dict) == count_dict
-
-
-

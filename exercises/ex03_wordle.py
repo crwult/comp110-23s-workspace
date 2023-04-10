@@ -1,6 +1,23 @@
 """Wordle on repeat: Practice with Function."""
 __author__ = "730552290"
 
+def main() -> None:
+    """The entrypoint of the program and main game loop."""
+    win: bool = False
+    guess_number: int = 1
+    SECRET_WORD = "codes"
+    while (win == False) and (guess_number <= 6):
+        print (f"=== Turn {guess_number}/6 ===")
+        correct_guess = input_guess(len(SECRET_WORD))
+        print(emojified(correct_guess, SECRET_WORD))
+        if correct_guess == SECRET_WORD:
+            win = True
+            print(f"You won in {guess_number}/6 turns")
+        guess_number += 1
+    if guess_number == 7:
+        print("X/6 - Sorry, try again tomorrow!")
+
+
 def contains_char(yellow_guess: str, character: str) -> bool:
     """Checks if the character is in the string."""
     assert len(character) == 1
@@ -31,5 +48,18 @@ def emojified(guess: str, SECRET: str) -> str:
                 boxes += WHITE_BOX
         emoji_i += 1
     return(boxes)
-print(emojified("hello","olleh"))
 
+def input_guess(SECRET_length: int) -> str:
+    """When a number is put it, it puts out inputs with the same amount of characters"""
+    correct_length = False
+    initial_input = str(input(f"Enter a {SECRET_length} character word: "))
+    if len(initial_input) == SECRET_length:
+        correct_length = True
+    while correct_length == False:
+        initial_input = str(input(f"That wasn't {SECRET_length} chars! Try agian: "))
+        if len(initial_input) == SECRET_length:
+            correct_length = True
+    return(initial_input)
+
+if __name__ == "__main__":
+    main()
