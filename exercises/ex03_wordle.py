@@ -1,6 +1,7 @@
 """Wordle on repeat: Practice with Function."""
 __author__ = "730552290"
 
+<<<<<<< HEAD
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     win: bool = False
@@ -18,6 +19,8 @@ def main() -> None:
         print("X/6 - Sorry, try again tomorrow!")
 
 
+=======
+>>>>>>> 98d20176a9ea5b957532c2fc41bb320a194a0d80
 def contains_char(yellow_guess: str, character: str) -> bool:
     """Checks if the character is in the string."""
     assert len(character) == 1
@@ -48,6 +51,7 @@ def emojified(guess: str, SECRET: str) -> str:
                 boxes += WHITE_BOX
         emoji_i += 1
     return(boxes)
+<<<<<<< HEAD
 
 def input_guess(SECRET_length: int) -> str:
     """When a number is put it, it puts out inputs with the same amount of characters"""
@@ -63,3 +67,7 @@ def input_guess(SECRET_length: int) -> str:
 
 if __name__ == "__main__":
     main()
+=======
+print(emojified("hello","olleh"))
+
+>>>>>>> 98d20176a9ea5b957532c2fc41bb320a194a0d80

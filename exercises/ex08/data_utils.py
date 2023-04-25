@@ -38,6 +38,8 @@ def head(table: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
     for key in table:
         empty_list: list[str] = []
         table_list: list[str] = table[key]
+        if rows >= len(table):
+            rows = len(table)
         for num in range (0, rows):
             empty_list.append(table_list[num])
         empty_dict[key] = empty_list
